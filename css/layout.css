@@ -1,34 +1,42 @@
+/*Body*/
 body {
-  display: flex;
-  height: 100vh;   
-  overflow: hidden; 
+  display: flex; /*Flex coloca sidebar y main-wrapper en fila horizontal automaticamente*/
+  height: 100vh; /*Ocupa toda la altura visible del navegador*/
+  overflow: hidden; /*delega el scroll a la zona de contenido*/
 }
 
-
+/*Sidebar:
+Barra lateral izquierda, siempre visible.
+Es un flex en columna con 3 zonas:
+brand (arriba), nav (centro, flexible), footer (abajo)
+*/
 .sidebar {
-  width: var(--sidebar-width);  
-  height: 100vh;                
-  flex-shrink: 0;               
+  width: var(--sidebar-width); /*240px, definido en variables.css*/
+  height: 100vh;
+  flex-shrink: 0; /*Nunca cede espacio al main-wrapper*/
 
   background-color: var(--color-surface);
   border-right: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /*Brand, nav y footer apliados vertical*/
 
-  overflow: hidden;
+  overflow: hidden; /*Evita que contenido interno se desborde*/
 }
 
+/*Sidebar - Brand:
+Misma altura que la navbar para que quede alineada
+*/
 .sidebar__brand {
   display: flex;
   align-items: center;
   gap: var(--space-3);
 
-  height: var(--navbar-height);
+  height: var(--navbar-height); /*Se alinea con la navbar del lado derecho*/
   padding: 0 var(--space-5);
 
   border-bottom: 1px solid var(--color-border);
-  flex-shrink: 0;
+  flex-shrink: 0; /*Tamaño fijo, no cede espacio al nav*/
 }
 
 .sidebar__brand-icon {
@@ -44,17 +52,24 @@ body {
   white-space: nowrap;
 }
 
+/*Sidebar - Nav:
+flex: 1 hace que ocupe todo el espacio entre brand y footer
+overflow-y: auto agrega scroll si el menú es muy largo
+*/
 .sidebar__nav {
   flex: 1;
   overflow-y: auto;
   padding: var(--space-4) 0;
 }
 
-
+/*Cada seccion agrupa items relacionados (Comercial, Operaciones)
+margin-bottom separa visualmente una seccion de otra*/
 .sidebar__section {
   margin-bottom: var(--space-4);
 }
 
+/*Label de seccion: texto en mayusculas que actua como titulo
+de cada grupo de items*/
 .sidebar__section-label {
   display: block;
   padding: var(--space-2) var(--space-5);
@@ -66,6 +81,7 @@ body {
   white-space: nowrap;
 }
 
+/*Lista de items en columna dentro de cada seccion*/
 .sidebar__list {
   display: flex;
   flex-direction: column;
@@ -75,6 +91,7 @@ body {
   width: 100%;
 }
 
+/*Enlace de cada item: icono + texto alineados horizontalmente*/
 .sidebar__link {
   display: flex;
   align-items: center;
@@ -91,6 +108,7 @@ body {
   color: var(--color-text);
 }
 
+/*Estado activo: JS agrega y quita esta clase segun el item clickeado*/
 .sidebar__link--active {
   background-color: var(--color-primary-light);
   color: var(--color-primary);
@@ -106,6 +124,9 @@ body {
   font-size: var(--text-sm);
 }
 
+/*SIDEBAR — Footer
+Zona inferior con la versión del sistema
+flex-shrink: 0 lo mantiene siempre visible abajo*/
 .sidebar__footer {
   padding: var(--space-4) var(--space-5);
   border-top: 1px solid var(--color-border);
@@ -118,6 +139,11 @@ body {
   white-space: nowrap;
 }
 
+/*Main Wrapper
+Contenedor derecho que agrupa navbar y zona de contenido
+flex: 1 hace que ocupe todo el espacio disponible que el sidebar no usa
+flex-direction: column apila navbar arriba, contenido abajo
+min-width: 0 evita desbordamiento cuando el contenido es ancho*/
 .main-wrapper {
   flex: 1;
   display: flex;
@@ -126,12 +152,15 @@ body {
   min-width: 0;
 }
 
+/*Navbar principal:
+Siempre visible, nunca cambia entre vistas
+Los dropdown y las acciones van aqui*/
 .navbar {
-  height: var(--navbar-height);
-  flex-shrink: 0;    
+  height: var(--navbar-height); /*56px, definido en variables.css*/
+  flex-shrink: 0; /*Siempre mantiene sus 56px*/
 
   display: flex;
-  align-items: center;
+  align-items: center; /*Centra verticalmente todo su contenido*/
   gap: var(--space-4);
   padding: 0 var(--space-6);
 
@@ -140,13 +169,7 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
-.navbar__page-title {
-  flex: 1;
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: var(--color-text);
-}
-
+/*Zona derecha de la navbar: usuario y avatar*/
 .navbar__actions {
   display: flex;
   align-items: center;
@@ -158,10 +181,11 @@ body {
   color: var(--color-text-secondary);
 }
 
+/*Avatar circular con la inicial del usuario*/
 .navbar__avatar {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 50%; /*Circulo perfecto*/
   background-color: var(--color-primary);
   color: white;
   font-size: var(--text-sm);
@@ -177,22 +201,11 @@ body {
   background-color: var(--color-primary-hover);
 }
 
+/*Zona de contenido:
+Ocupa todo el espacio restante debajo de la navbar*/
 .content {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: auto; /*agrega scroll propio cuando el contenido es más alto que el espacio disponible*/
   padding: var(--space-6);
   background-color: var(--color-bg);
-}
-
-.content__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-5);
-}
-
-.content__title {
-  font-size: var(--text-xl);
-  font-weight: 600;
-  color: var(--color-text);
 }
