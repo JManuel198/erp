@@ -15,78 +15,78 @@
     <aside class="sidebar">
 
 <!-- Logo y nombre -->
-    <div class="sidebar__brand">
-        <span class="sidebar__brand-icon">⬡</span>
-        <span class="sidebar__brand-name">ERP Sistema</span>
-    </div>
+        <div class="sidebar__brand">
+            <span class="sidebar__brand-icon">⬡</span>
+            <span class="sidebar__brand-name">ERP Sistema</span>
+        </div>
 
 <!-- Navegación -->
-    <nav class="sidebar__nav">
+        <nav class="sidebar__nav">
 
 <!-- Seccion comercial -->
-        <div class="sidebar__section">
-            <span class="sidebar__section-label">Comercial</span>
-            <ul class="sidebar__list">
-                <li class="sidebar__item">
-                    <a href="#" class="sidebar__link" data-view="cotizacion">
-                        <span class="sidebar__link-icon">◈</span>
-                        <span class="sidebar__link-text">Cotización</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+            <div class="sidebar__section">
+                <span class="sidebar__section-label">Comercial</span>
+                <ul class="sidebar__list">
+                    <li class="sidebar__item">
+                        <a href="#" class="sidebar__link" data-view="cotizacion">
+                            <span class="sidebar__link-icon">◈</span>
+                            <span class="sidebar__link-text">Cotización</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
 <!-- Seccion de operaciones -->
-        <div class="sidebar__section">
-            <span class="sidebar__section-label">Operaciones</span>
-            <ul class="sidebar__list">
+            <div class="sidebar__section">
+                <span class="sidebar__section-label">Operaciones</span>
+                <ul class="sidebar__list">
 
-                <li class="sidebar__item">
-                    <a href="#" class="sidebar__link" data-view="proyectos">
-                        <span class="sidebar__link-icon">◇</span>
-                        <span class="sidebar__link-text">Proyectos</span>
-                    </a>
-                </li>
+                    <li class="sidebar__item">
+                        <a href="#" class="sidebar__link" data-view="proyectos">
+                            <span class="sidebar__link-icon">◇</span>
+                            <span class="sidebar__link-text">Proyectos</span>
+                        </a>
+                    </li>
 
-                <li class="sidebar__item">
-                    <a href="#" class="sidebar__link" data-view="orden-trabajo">
-                        <span class="sidebar__link-icon">◇</span>
-                        <span class="sidebar__link-text">Orden de trabajo</span>
-                    </a>
-                </li>
+                    <li class="sidebar__item">
+                        <a href="#" class="sidebar__link" data-view="orden-trabajo">
+                            <span class="sidebar__link-icon">◇</span>
+                            <span class="sidebar__link-text">Orden de trabajo</span>
+                        </a>
+                    </li>
 
-                <li class="sidebar__item">
-                    <a href="#" class="sidebar__link" data-view="orden-interna">
-                        <span class="sidebar__link-icon">◇</span>
-                        <span class="sidebar__link-text">Orden interna</span>
-                    </a>
-                </li>
+                    <li class="sidebar__item">
+                        <a href="#" class="sidebar__link" data-view="orden-interna">
+                            <span class="sidebar__link-icon">◇</span>
+                            <span class="sidebar__link-text">Orden interna</span>
+                        </a>
+                    </li>
 
-                <li class="sidebar__item">
-                    <a href="#" class="sidebar__link" data-view="requerimientos">
-                        <span class="sidebar__link-icon">◇</span>
-                        <span class="sidebar__link-text">Requerimientos</span>
-                    </a>
-                </li>
+                    <li class="sidebar__item">
+                        <a href="#" class="sidebar__link" data-view="requerimientos">
+                            <span class="sidebar__link-icon">◇</span>
+                            <span class="sidebar__link-text">Requerimientos</span>
+                        </a>
+                    </li>
 
-                <li class="sidebar__item">
-                    <a href="#" class="sidebar__link" data-view="rendiciones">
-                        <span class="sidebar__link-icon">◇</span>
-                        <span class="sidebar__link-text">Rendiciones</span>
-                    </a>
-                </li>
+                    <li class="sidebar__item">
+                        <a href="#" class="sidebar__link" data-view="rendiciones">
+                            <span class="sidebar__link-icon">◇</span>
+                            <span class="sidebar__link-text">Rendiciones</span>
+                        </a>
+                    </li>
 
-                <li class="sidebar__item">
-                    <a href="#" class="sidebar__link" data-view="caja-chica">
-                        <span class="sidebar__link-icon">◇</span>
-                        <span class="sidebar__link-text">Caja chica</span>
-                    </a>
-                </li>
+                    <li class="sidebar__item">
+                        <a href="#" class="sidebar__link" data-view="caja-chica">
+                            <span class="sidebar__link-icon">◇</span>
+                            <span class="sidebar__link-text">Caja chica</span>
+                        </a>
+                    </li>
 
-            </ul>
-        </div>
+                </ul>
+            </div>
 
-    </nav>
+        </nav>
 
 <!-- Versión del sistema -->
         <div class="sidebar__footer">
@@ -103,64 +103,63 @@ La zona de contenido es reemplazada por JS.
 -->
     <div class="main-wrapper">
 
-    <header class="navbar">
+        <header class="navbar">
 
-        <div class="navbar__actions">
+            <div class="navbar__actions">
+                    <!--Dropdown de base de datos-->
+                <div class="navbar__db-selector">
+                    <button class="navbar__dropdown-btn">
+                        <i class="fa-solid fa-database"></i>
+                    </button>
+                    <ul class="navbar__dropdown-menu">
+                        <li><a href="#">Clientes</a></li>
+                        <li><a href="#">Contactos</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">EPPs</a></li>
+                        <li><a href="#">Personal</a></li>
+                        <li><a href="#">Materiales</a></li>
+                        <li><a href="#">Herramientas</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                    </ul>
+                </div>
 
-            <!--Dropdown de base de datos-->
-        <div class="navbar__db-selector">
-            <button class="navbar__dropdown-btn">
-                <i class="fa-solid fa-database"></i>
-            </button>
-            <ul class="navbar__dropdown-menu">
-                <li><a href="#">Clientes</a></li>
-                <li><a href="#">Contactos</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">EPPs</a></li>
-                <li><a href="#">Personal</a></li>
-                <li><a href="#">Materiales</a></li>
-                <li><a href="#">Herramientas</a></li>
-                <li><a href="#">Ofertas</a></li>
-            </ul>
-        </div>
-        
-            <span class="navbar__user">Admin</span>
-            <div class="navbar__avatar">A</div>
-        </div>
-
-    </header>
-
-    <main class="content" id="content">
-        <form id="form-cotizacion">
-            <div class="form-group">
-                <label class="form-label" for="nombre">Nombre</label>
-                <input class="form-input" type="text" id="nombre" 
-                placeholder="Ingrese el nombre"/>
+                <span class="navbar__user">Admin</span>
+                <div class="navbar__avatar">A</div>
             </div>
 
-            <div class="form-group">
-                <label class="form-label" for="telefono">Teléfono</label>
-                <input class="form-input" type="text" id="telefono" 
-                placeholder="Ingrese el teléfono"/>
-            </div>
+        </header>
 
-            <div class="form-group">
-                <label class="form-label" for="direccion">Dirección</label>
-                <input class="form-input" type="text" id="direccion" 
-                placeholder="Ingrese la dirección"/>
-            </div>
+        <main class="content" id="content">
+            <form id="form-cotizacion">
+                <div class="form-group">
+                    <label class="form-label" for="nombre">Nombre</label>
+                    <input class="form-input" type="text" id="nombre" 
+                    placeholder="Ingrese el nombre"/>
+                </div>
 
-            <div class="form-group">
-                <label class="form-label" for="fecha">Fecha</label>
-                <input class="form-input" type="date" id="fecha" 
-                placeholder="Ingrese la fecha"/>
-            </div>
+                <div class="form-group">
+                    <label class="form-label" for="telefono">Teléfono</label>
+                    <input class="form-input" type="text" id="telefono" 
+                    placeholder="Ingrese el teléfono"/>
+                </div>
 
-            <button class="btn btn--primary" type="submit">
-                Guardar
-            </button>
-        </form>
-    </main>
+                <div class="form-group">
+                    <label class="form-label" for="direccion">Dirección</label>
+                    <input class="form-input" type="text" id="direccion" 
+                    placeholder="Ingrese la dirección"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="fecha">Fecha</label>
+                    <input class="form-input" type="date" id="fecha" 
+                    placeholder="Ingrese la fecha"/>
+                </div>
+
+                <button class="btn btn--primary" type="submit">
+                    Guardar
+                </button>
+            </form>
+        </main>
 
     </div>
     <script src="js/dropdown.js"></script>
