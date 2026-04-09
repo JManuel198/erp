@@ -29,12 +29,10 @@ document.querySelectorAll('.navbar__dropdown-menu a')
     enlace.addEventListener('click', function(evento) {
       evento.preventDefault()
 
-      // Leer el texto del enlace clickeado
       const vista = enlace.textContent.trim()
 
-      // Cargar la vista correspondiente
       if (vista === 'Contactos') {
-        mostrarListado()
+        navegar('/general/DataBase/List/Contacts')
       }
 
     })
