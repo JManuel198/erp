@@ -1,8 +1,9 @@
 /*
-Estilos específicos de la sección Contactos.
+    views.css
+    Estilos compartidos por todas las vistas del sistema.
 */
 
-/* Header principal de la vista */
+/* Header principal: título izquierda, breadcrumb derecha */
 .view-header {
     display: flex;
     align-items: center;
@@ -23,7 +24,7 @@ Estilos específicos de la sección Contactos.
     color: var(--color-text-muted);
 }
 
-/* Header de formulario: columna en lugar de fila */
+/* Modificador para formularios: título y subtítulo centrados en columna */
 .view-header--form {
     flex-direction: column;
     align-items: center;
@@ -36,7 +37,7 @@ Estilos específicos de la sección Contactos.
     color: var(--color-text-secondary);
 }
 
-/* Subheader: botón + búsqueda + paginación */
+/* Subheader: botón nuevo + búsqueda + paginación */
 .view-subheader {
     display: flex;
     align-items: center;
@@ -66,7 +67,11 @@ Estilos específicos de la sección Contactos.
     white-space: nowrap;
 }
 
-/* Tabla */
+
+/*
+    Vista tipo listado en tabla
+*/
+
 .table-wrapper {
     overflow-x: auto;
     background-color: var(--color-surface);
@@ -120,25 +125,80 @@ Estilos específicos de la sección Contactos.
     padding: var(--space-8) var(--space-4) !important;
 }
 
-/* Formulario de dos columnas */
-.form-contacto {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
+
+/*
+    Vista tipo formulario
+*/
+
+/* Contenedor base de todos los formularios */
+.view-form {
     padding: var(--space-6) var(--space-5);
-    max-width: 100%;
+    width: 100%;
     background-color: var(--color-surface);
 }
 
-.form-contacto__col {
+/* Un grupo label + input en columna */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.form-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* Layout A: dos columnas iguales (usado en contactos) */
+.form-layout-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+}
+
+.form-col {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
 }
 
-/* Botones del formulario: ocupan las dos columnas */
-.form-contacto__actions {
+/* Layout B: campo completo arriba + dos columnas (usado en clientes y servicios) */
+.form-layout-top-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+}
+
+.form-layout-top-2col__full {
     grid-column: 1 / -1;
+}
+
+.form-layout-top-2col__col {
     display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* Layout C: una sola columna */
+.form-layout-1col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 480px;
+}
+
+/* Botones: al final de la última columna derecha, alineados a la derecha */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
     gap: var(--space-3);
+    padding-top: var(--space-2);
+}
+
+/* Campo calculado (como precio total): no editable visualmente */
+.form-input--readonly {
+    background-color: var(--color-bg);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
 }
